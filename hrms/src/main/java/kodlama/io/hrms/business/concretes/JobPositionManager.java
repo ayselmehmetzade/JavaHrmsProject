@@ -9,6 +9,7 @@ import kodlama.io.hrms.business.abstracts.JobPositionService;
 import kodlama.io.hrms.core.utilities.results.DataResult;
 import kodlama.io.hrms.core.utilities.results.Result;
 import kodlama.io.hrms.core.utilities.results.SuccessDataResult;
+import kodlama.io.hrms.core.utilities.results.SuccessResult;
 import kodlama.io.hrms.dataAccess.abstracts.JobPositionDao;
 import kodlama.io.hrms.entities.concretes.JobPosition;
 
@@ -35,8 +36,8 @@ public class JobPositionManager implements JobPositionService {
 
 	@Override
 	public Result add(JobPosition jobposition) {
-		// TODO Auto-generated method stub
-		return null;
+		this.jobPositionDao.save(jobposition);
+		return new SuccessResult("Ürün eklendi");
 	}
 
 	@Override
