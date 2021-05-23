@@ -2,18 +2,19 @@ package kodlama.io.hrms.business.abstracts;
 
 import java.util.List;
 
+import kodlama.io.hrms.core.utilities.results.DataResult;
+import kodlama.io.hrms.core.utilities.results.Result;
 import kodlama.io.hrms.entities.concretes.JobPosition;
 
-
 public interface JobPositionService {
-	
-	List<JobPosition> getAll();
 
-	JobPosition getById(int id);
+	DataResult<List<JobPosition>> getAll();
 
-	void add(JobPosition jobposition);
+	DataResult<JobPosition> getById(int id);
 
-	void delete(JobPosition jobposition);
+	Result add(JobPosition jobposition);
 
-	void update(JobPosition jobposition);
+	Result delete(JobPosition jobposition);
+
+	Result update(JobPosition jobposition);
 }
