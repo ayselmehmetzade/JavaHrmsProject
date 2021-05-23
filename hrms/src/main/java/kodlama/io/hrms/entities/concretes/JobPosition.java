@@ -8,9 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "job_positions")
 public class JobPosition {
@@ -32,18 +36,7 @@ public class JobPosition {
 	@Column(name = "created_at")
 	private LocalDate createdAt;
 
-	public JobPosition() {
 
-	}
-
-	public JobPosition(int id, String jobTitle, boolean isActive, boolean isDeleted, LocalDate createdAt) {
-		super();
-		this.id = id;
-		this.jobTitle = jobTitle;
-		this.isActive = isActive;
-		this.isDeleted = isDeleted;
-		this.createdAt = createdAt;
-	}
 
 
 }

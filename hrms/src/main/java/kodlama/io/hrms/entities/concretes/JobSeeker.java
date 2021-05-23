@@ -8,9 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="jobseekers")
 
@@ -36,19 +40,6 @@ public class JobSeeker {
 	@Column(name="date_of_birth")
 	private LocalDate dateOfBirth;
 
-	public JobSeeker() {
 
-	}
-
-	public JobSeeker(int userId, String firstName, String lastName, String nationalId, boolean isVerified,
-			LocalDate dateOfBirth) {
-		super();
-		this.userId = userId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.nationalId = nationalId;
-		this.isVerified = isVerified;
-		this.dateOfBirth = dateOfBirth;
-	}
 
 }

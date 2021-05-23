@@ -6,9 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="employers")
 public class Employer {
@@ -30,17 +34,6 @@ public class Employer {
 	@Column(name="company_name")
 	private String companyName;
 
-	public Employer() {
-
-	}
-
-	public Employer(int userId, String webSite, String phoneNumber, boolean isVerified, String companyName) {
-		super();
-		this.userId = userId;
-		this.webSite = webSite;
-		this.phoneNumber = phoneNumber;
-		this.isVerified = isVerified;
-		this.companyName = companyName;
-	}
+	
 
 }

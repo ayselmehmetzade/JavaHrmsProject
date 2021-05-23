@@ -8,9 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="employers_verification_codes")
 public class EmployerVerificationCode {
@@ -32,18 +36,6 @@ public class EmployerVerificationCode {
 	@Column(name="created_at")
 	private LocalDate createdAt;
 	
-	public EmployerVerificationCode() {
-		
-	}
-
-	public EmployerVerificationCode(int id, int employerId, String verificationCode, boolean isConfirmed,
-			LocalDate createdAt) {
-		super();
-		this.id = id;
-		this.employerId = employerId;
-		this.verificationCode = verificationCode;
-		this.isConfirmed = isConfirmed;
-		this.createdAt = createdAt;
-	}
+	
 
 }
