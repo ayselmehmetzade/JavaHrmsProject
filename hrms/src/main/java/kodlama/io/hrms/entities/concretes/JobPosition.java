@@ -28,14 +28,14 @@ public class JobPosition {
 	@Column(name = "job_title")
 	private String jobTitle;
 
-	@Column(name = "is_active")
-	private boolean isActive;
-
-	@Column(name = "is_deleted")
-	private boolean isDeleted;
-
-	@Column(name = "created_at")
-	private LocalDate createdAt;
+	@Column(name= "created_at", columnDefinition = "Date default CURRENT_DATE")
+	private LocalDate createdDate = LocalDate.now();
+	
+	@Column(name= "is_active", columnDefinition = "boolean default true")
+	private boolean isActive = true;
+	
+	@Column(name= "is_deleted", columnDefinition = "boolean default false")
+	private boolean isDeleted = false;
 
 
 
