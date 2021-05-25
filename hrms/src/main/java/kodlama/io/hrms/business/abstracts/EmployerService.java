@@ -2,18 +2,15 @@ package kodlama.io.hrms.business.abstracts;
 
 import java.util.List;
 
+import kodlama.io.hrms.core.utilities.results.DataResult;
+import kodlama.io.hrms.core.utilities.results.Result;
 import kodlama.io.hrms.entities.concretes.Employer;
 
 
 public interface EmployerService {
 
-	List<Employer> getAll();
+	DataResult<List<Employer>> getAll();
+	Result add(Employer employer);
 
-	Employer getById(int id);
 
-	void add(Employer employer);
-
-	void delete(Employer employer);
-
-	void update(Employer employer);
 }

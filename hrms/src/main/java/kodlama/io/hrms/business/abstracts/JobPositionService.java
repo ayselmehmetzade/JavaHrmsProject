@@ -9,12 +9,12 @@ import kodlama.io.hrms.entities.concretes.JobPosition;
 public interface JobPositionService {
 
 	DataResult<List<JobPosition>> getAll();
-
-	DataResult<JobPosition> getById(int id);
-
 	Result add(JobPosition jobposition);
+	DataResult<JobPosition> getJobByName(String title);
 
-	Result delete(JobPosition jobposition);
-
-	Result update(JobPosition jobposition);
+//	DataResult<JobPosition> getById(int id);
+//
+//	Result delete(JobPosition jobposition);
+//
+//	Result update(JobPosition jobposition);
 }
