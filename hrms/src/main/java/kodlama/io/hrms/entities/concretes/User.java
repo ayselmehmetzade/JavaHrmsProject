@@ -34,8 +34,7 @@ public class User {
 	@Column(name = "password")
 	private String password;
 
-	@Column(name = "created_at", columnDefinition = "Date defult CURRENT_DATE") // tarih girilmemişse anlık tarihi
-																				// getirir
+	@Column(name = "created_at", columnDefinition = "Date defult CURRENT_DATE") // tarih girilmemişse anlık tarihi getirir
 	private LocalDate createdDate = LocalDate.now();
 
 	@Column(name = "is_active", columnDefinition = "boolean default true")
