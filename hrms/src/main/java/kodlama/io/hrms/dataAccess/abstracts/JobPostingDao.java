@@ -17,5 +17,7 @@ public interface JobPostingDao extends JpaRepository<JobPosting, Integer> {
 	
 	@Query("From JobPosting where isOpen = true and employer_id =:id")
 	List<JobPosting> getAllOpenJobPostingByEmployer(int id);
+	
+	JobPosting getById(int id);
 
 }
