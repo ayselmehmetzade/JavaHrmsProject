@@ -53,7 +53,7 @@ public class JobPostingManager implements JobPostingService {
 
 	@Override
 	public DataResult<JobPosting> getById(int id) {
-		return new SuccessDataResult<JobPosting>(this.jobPostingDao.getById(id));
+		return new SuccessDataResult<JobPosting>(this.jobPostingDao.findById(id).orElse(null)); //fatihe sor
 	}
 
 	@Override
@@ -82,14 +82,15 @@ public class JobPostingManager implements JobPostingService {
 
 	@Override
 	public Result toggleVisibility(int id) {
-		if (getById(id).getData() == null) {
+		
+		JobPosting jobPosting = getById(id).getData();
+		
+		if (jobPosting == null) {
 			return new ErrorResult("Böyle bir iş ilanı bulunmamaktadır");
 		}
-		if (getById(id).getData().isOpen() == false) {
+		if (jobPosting.isOpen() == false) {
 			return new ErrorResult("İş ilanı zaten kapalı");
-		}
-
-		JobPosting jobPosting = getById(id).getData();
+		}		
 		jobPosting.setOpen(false);
 		update(jobPosting);
 		return new SuccessResult("İş ilanı kapatılmıştır");
