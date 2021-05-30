@@ -51,4 +51,9 @@ public class JobPostingController {
 		return this.jobPostingService.getAllOpenJobPosting();
 	}
 
+	@PostMapping("/togglevisibility")
+	public Result toggleVisibility(int id) {
+		return this.jobPostingService.toggleVisibility(id);
+		
+	}
 }

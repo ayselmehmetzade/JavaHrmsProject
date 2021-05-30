@@ -15,5 +15,6 @@ public interface JobPostingService {
 	DataResult<List<JobPosting>> getAllOpenJobPosting();
 	DataResult<List<JobPosting>> getAllOrderByPublishedDateDesc();
 	DataResult<List<JobPosting>> getAllOpenJobPostingByEmployer(int id);
+	Result toggleVisibility(int id);
 
 }

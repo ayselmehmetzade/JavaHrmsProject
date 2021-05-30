@@ -27,7 +27,7 @@ public class JobPostingManager implements JobPostingService {
 
 	@Override
 	public Result add(JobPosting jobPosting) {
-		if(!CheckIfNull(jobPosting)) {
+		if (!CheckIfNull(jobPosting)) {
 			return new ErrorResult("Eksik bilgi girdiniz.");
 		}
 		this.jobPostingDao.save(jobPosting);
@@ -78,6 +78,21 @@ public class JobPostingManager implements JobPostingService {
 		} else {
 			return false;
 		}
+	}
+
+	@Override
+	public Result toggleVisibility(int id) {
+		if (getById(id) == null) {
+			return new ErrorResult("Böyle bir iş ilanı bulunmamaktadır");
+		}
+		if (getById(id).getData().isOpen() == false) {
+			return new ErrorResult("İş ilanı zaten kapalı");
+		}
+
+		JobPosting jobPosting = getById(id).getData();
+		jobPosting.setOpen(false);
+		update(jobPosting);
+		return new SuccessResult("İş ilanı kapatılmıştır");
 	}
 
 }
