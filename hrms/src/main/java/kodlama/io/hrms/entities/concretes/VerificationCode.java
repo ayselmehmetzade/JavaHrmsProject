@@ -43,7 +43,7 @@ public class VerificationCode {
 		this.userId = userId;
 		this.code = code;
 		this.isConfirmed = isConfirmed;
-		this.createdAt = createdAt;
+//		this.createdAt = createdAt;
 	}
 
 }

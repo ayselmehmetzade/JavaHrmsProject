@@ -44,6 +44,12 @@ public class JobPosition {
 
 	@OneToMany(mappedBy = "jobPosition")
 	private List<JobPosting> jobPostings;
+	
+	public JobPosition(String jobTitle, List<JobPosting> jobPostings) {
+		super();
+		this.jobTitle = jobTitle;
+		this.jobPostings = jobPostings;
+	} 
 
 
 

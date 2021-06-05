@@ -34,4 +34,9 @@ public class City {
 	@OneToMany(mappedBy = "city")
 	private List<JobPosting> jobPostings;
 
+	public City(String name, List<JobPosting> jobPostings) {
+		super();
+		this.name = name;
+		this.jobPostings = jobPostings;
+	}
 }

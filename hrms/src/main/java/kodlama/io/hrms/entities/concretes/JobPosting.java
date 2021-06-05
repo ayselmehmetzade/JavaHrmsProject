@@ -11,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,61 +19,52 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="job_postings")
+@Table(name = "job_postings")
 public class JobPosting {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name = "id")
 	private int id;
-	
-//	@Column(name="job_position_id")
-//	private int jobPositionId;
-//	
-//	@Column(name="city_id")
-//	private int cityId;
-//	
-//	@Column(name="employer_id")
-//	private int employerId;
-	
-	@Column(name="description")
+
+	@Column(name = "description")
 	private String description;
-	
-	@Column(name="open_position_quota")
+
+	@Column(name = "open_position_quota")
 	private int openPositionQuota;
-	
-	@Column(name="application_deadline")
+
+	@Column(name = "application_deadline")
 	private LocalDate applicationDeadline;
-	
-	@Column(name="is_active")
+
+	@Column(name = "is_active")
 	private boolean isActive;
-	
-	@Column(name="is_open")
+
+	@Column(name = "is_open")
 	private boolean isOpen;
-	
-	@Column(name="is_deleted")
+
+	@Column(name = "is_deleted")
 	private boolean isDeleted;
-	
-	@Column(name= "created_at")
+
+	@Column(name = "created_at")
 	private LocalDate createdDate = LocalDate.now();
-	
-	@Column(name="published_date")
+
+	@Column(name = "published_date")
 	private LocalDate publishedDate;
-	
-	@Column(name="max_salary")
+
+	@Column(name = "max_salary")
 	private int maxSalary;
-	
-	@Column(name="min_salary")
+
+	@Column(name = "min_salary")
 	private int minSalary;
-	
+
 	@ManyToOne
-	@JoinColumn(name="job_position_id")
+	@JoinColumn(name = "job_position_id")
 	private JobPosition jobPosition;
 
 	@ManyToOne
-	@JoinColumn(name="city_id")
+	@JoinColumn(name = "city_id")
 	private City city;
-	
+
 	@ManyToOne
-	@JoinColumn(name="employer_id")
+	@JoinColumn(name = "employer_id")
 	private Employer employer;
 }

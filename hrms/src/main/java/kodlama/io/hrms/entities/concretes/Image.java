@@ -1,52 +1,50 @@
 package kodlama.io.hrms.entities.concretes;
 
 import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-@Entity
-@Table(name = "users")
 @Data
-@Inheritance(strategy = InheritanceType.JOINED)
-@NoArgsConstructor
 @AllArgsConstructor
-public class User {
-
+@NoArgsConstructor
+@Entity
+@Table(name = "images")
+public class Image {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 
-	@Column(name = "email")
-	private String email;
+	@Column(name = "url")
+	private String url;
 
-	@Column(name = "password")
-	private String password;
+	@JsonIgnore
+	@Column(name = "created_at", columnDefinition = "Date default CURRENT_DATE")
+	private LocalDate createdAt = LocalDate.now();
 
-	@Column(name = "created_at", columnDefinition = "Date defult CURRENT_DATE") // tarih girilmemişse anlık tarihi getirir
-	private LocalDate createdDate = LocalDate.now();
-
+	@JsonIgnore
 	@Column(name = "is_active", columnDefinition = "boolean default true")
 	private boolean isActive = true;
 
+	@JsonIgnore
 	@Column(name = "is_deleted", columnDefinition = "boolean default false")
 	private boolean isDeleted = false;
-	
-	public User(String email, String password) {
-		super();
-		this.email = email;
-		this.password = password;
-	}
 
+	@OneToOne(optional = false, fetch = FetchType.LAZY)
+	@JoinColumn(name="jobseeker_id")
+	private JobSeeker jobSeeker;
 }
