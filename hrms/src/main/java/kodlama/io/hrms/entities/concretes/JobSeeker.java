@@ -25,10 +25,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class JobSeeker extends User {
 
-//	@Id
-//	@GeneratedValue
-//	@Column(name= "user_id")
-//	private int userId;
 
 	@Column(name = "first_name")
 	private String firstName;

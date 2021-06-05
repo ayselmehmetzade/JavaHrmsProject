@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlama.io.hrms.business.abstracts.JobPositionService;
 import kodlama.io.hrms.core.utilities.results.DataResult;
 import kodlama.io.hrms.core.utilities.results.Result;
-import kodlama.io.hrms.core.utilities.results.SuccessDataResult;
 import kodlama.io.hrms.entities.concretes.JobPosition;
 
 @RestController
