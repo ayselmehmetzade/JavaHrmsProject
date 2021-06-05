@@ -25,7 +25,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class JobSeeker extends User {
 
-
 	@Column(name = "first_name")
 	private String firstName;
 
@@ -51,15 +50,22 @@ public class JobSeeker extends User {
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "jobseeker")
+	private List<School> schools;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "jobseeker")
+	private List<Skill> skills;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "jobseeker")
 	private List<CoverLetter> coverLetters;
 
 	@JsonIgnore
 	@OneToOne(mappedBy = "jobseeker", optional = false, fetch = FetchType.LAZY)
 	private Image image;
-	
-//	@JsonIgnore
-//	@OneToMany(mappedBy = "jobseeker")
-//	private List<Link> links;
-	
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "jobseeker")
+	private List<Link> links;
 
 }
