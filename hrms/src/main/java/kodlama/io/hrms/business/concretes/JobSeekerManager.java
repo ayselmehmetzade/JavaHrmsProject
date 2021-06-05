@@ -12,6 +12,7 @@ import kodlama.io.hrms.core.utilities.results.SuccessDataResult;
 import kodlama.io.hrms.core.utilities.results.SuccessResult;
 import kodlama.io.hrms.dataAccess.abstracts.JobSeekerDao;
 import kodlama.io.hrms.entities.concretes.JobSeeker;
+import kodlama.io.hrms.entities.dtos.CVDto;
 
 @Service
 public class JobSeekerManager implements JobSeekerService{
@@ -38,6 +39,30 @@ public class JobSeekerManager implements JobSeekerService{
 	@Override
 	public DataResult<JobSeeker> getByNationalId(String nationalId) {
 		return new SuccessDataResult<JobSeeker>(this.jobSeekerDao.findByNationalId(nationalId));
+	}
+
+	@Override
+	public Result update(JobSeeker jobseeker) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Result delete(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DataResult<JobSeeker> getById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DataResult<CVDto> getJobseekerCVById(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
