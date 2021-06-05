@@ -6,4 +6,5 @@ import kodlama.io.hrms.entities.concretes.EmployerVerificationEmployee;
 
 public interface EmployerVerificationEmployeeDao extends JpaRepository<EmployerVerificationEmployee, Integer> {
 
+	EmployerVerificationEmployee getById(int id);
 }

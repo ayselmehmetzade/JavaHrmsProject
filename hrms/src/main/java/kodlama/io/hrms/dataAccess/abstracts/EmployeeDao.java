@@ -6,4 +6,5 @@ import kodlama.io.hrms.entities.concretes.Employee;
 
 public interface EmployeeDao extends JpaRepository<Employee, Integer>{
 
+	Employee getById(int id);
 }
