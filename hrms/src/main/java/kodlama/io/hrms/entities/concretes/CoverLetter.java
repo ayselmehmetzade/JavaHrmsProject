@@ -43,15 +43,16 @@ public class CoverLetter {
 	@JsonIgnore
 	@Column(name = "is_deleted", columnDefinition = "boolean default false")
 	private boolean isDeleted = false;
-
-	@ManyToOne()
-	@JoinColumn(name = "jobseeker_id")
-	
-	private JobSeeker jobseeker;
 	
 	public CoverLetter(String content, int jobseekerId) {
 		super();
 		this.content = content;
-		this.jobseeker.setId(jobseekerId);
+		this.jobSeeker.setId(jobseekerId);
 	}
+
+	@ManyToOne()
+	@JoinColumn(name = "jobseeker_id")
+	private JobSeeker jobSeeker;
+	
+	
 }

@@ -10,6 +10,6 @@ public interface LinkDao extends JpaRepository<Link, Integer> {
 
 	Link getById(int id);
 
-	List<Link> getAllByJobseeker_id(int id);
+	List<Link> getAllByJobSeeker_id(int id);
 
 }

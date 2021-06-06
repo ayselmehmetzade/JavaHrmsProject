@@ -57,7 +57,7 @@ public class SkillManager implements SkillService{
 
 	@Override
 	public DataResult<List<Skill>> getAllByJobseekerId(int id) {
-		return new SuccessDataResult<List<Skill>>(this.skillDao.getAllByJobseeker_id(id));
+		return new SuccessDataResult<List<Skill>>(this.skillDao.getAllByJobSeeker_id(id));
 
 	}
 

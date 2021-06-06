@@ -10,5 +10,5 @@ public interface SkillDao extends JpaRepository<Skill, Integer> {
 
 	Skill getById(int id);
 
-	List<Skill> getAllByJobseeker_id(int id);
+	List<Skill> getAllByJobSeeker_id(int id);
 }

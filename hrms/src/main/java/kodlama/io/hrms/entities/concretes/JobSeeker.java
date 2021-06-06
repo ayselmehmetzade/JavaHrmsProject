@@ -41,31 +41,31 @@ public class JobSeeker extends User {
 	private boolean isVerified = false;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "jobseeker")
+	@OneToMany(mappedBy = "jobSeeker")
 	private List<ForeignLanguage> languages;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "jobseeker")
+	@OneToMany(mappedBy = "jobSeeker")
 	private List<Experience> experiences;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "jobseeker")
+	@OneToMany(mappedBy = "jobSeeker")
 	private List<School> schools;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "jobseeker")
+	@OneToMany(mappedBy = "jobSeeker")
 	private List<Skill> skills;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "jobseeker")
+	@OneToMany(mappedBy = "jobSeeker")
 	private List<CoverLetter> coverLetters;
 
 	@JsonIgnore
-	@OneToOne(mappedBy = "jobseeker", optional = false, fetch = FetchType.LAZY)
+	@OneToOne(mappedBy = "jobSeeker", optional = false, fetch = FetchType.LAZY)
 	private Image image;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "jobseeker")
+	@OneToMany(mappedBy = "jobSeeker")
 	private List<Link> links;
 
 }

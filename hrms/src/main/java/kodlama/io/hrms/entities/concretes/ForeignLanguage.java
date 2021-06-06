@@ -53,6 +53,6 @@ public class ForeignLanguage {
 
 	@ManyToOne()
 	@JoinColumn(name = "jobseeker_id")
-	private JobSeeker jobseeker;
+	private JobSeeker jobSeeker;
 
 }

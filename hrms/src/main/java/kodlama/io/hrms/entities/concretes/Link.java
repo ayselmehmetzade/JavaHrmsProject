@@ -49,5 +49,5 @@ public class Link {
 
 	@ManyToOne()
 	@JoinColumn(name = "jobseeker_id")
-	private JobSeeker jobseeker;
+	private JobSeeker jobSeeker;
 }

@@ -43,8 +43,8 @@ public class Image {
 	@JsonIgnore
 	@Column(name = "is_deleted", columnDefinition = "boolean default false")
 	private boolean isDeleted = false;
-
-	@OneToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name="jobseeker_id")
+	
+	@OneToOne(optional=false,fetch=FetchType.LAZY)
+    @JoinColumn(name = "jobseeker_id", referencedColumnName = "user_id")
 	private JobSeeker jobSeeker;
 }

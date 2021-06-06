@@ -56,13 +56,13 @@ public class SchoolManager implements SchoolService {
 
 	@Override
 	public DataResult<List<School>> getAllByJobseekerIdOrderByEndAtDesc(int id) {
-		return new SuccessDataResult<List<School>>(this.schoolDao.getAllByJobseeker_idOrderByEndAtDesc(id));
+		return new SuccessDataResult<List<School>>(this.schoolDao.getAllByJobSeeker_idOrderByEndDateDesc(id));
 
 	}
 
 	@Override
 	public DataResult<List<School>> getAllByJobseekerId(int id) {
-		return new SuccessDataResult<List<School>>(this.schoolDao.getAllByJobseeker_id(id));
+		return new SuccessDataResult<List<School>>(this.schoolDao.getAllByJobSeeker_id(id));
 
 	}
 

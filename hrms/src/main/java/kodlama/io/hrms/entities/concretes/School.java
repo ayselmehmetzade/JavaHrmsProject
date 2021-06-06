@@ -34,11 +34,11 @@ public class School {
 	@Column(name = "department")
 	private String department;
 	
-	@Column(name = "start_at")
-	private LocalDate startAt;
+	@Column(name = "start_date")
+	private LocalDate startDate;
 	
-	@Column(name = "end_at", nullable = true)
-	private LocalDate endAt;
+	@Column(name = "end_date", nullable = true)
+	private LocalDate endDate;
 
 	@JsonIgnore
 	@Column(name = "created_at", columnDefinition = "Date default CURRENT_DATE")
@@ -49,11 +49,11 @@ public class School {
 	private boolean isActive = true;
 
 	@JsonIgnore
-	@Column(name = "is_deleted", columnDefinition = "boolean default false")
+	@Column(name = "is_delete", columnDefinition = "boolean default false")
 	private boolean isDeleted = false;
 
 	@ManyToOne()
 	@JoinColumn(name = "jobseeker_id")
-	private JobSeeker jobseeker;
+	private JobSeeker jobSeeker;
 
 }
