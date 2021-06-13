@@ -50,6 +50,9 @@ public class JobPosting {
 	@Column(name = "created_at")
 	private LocalDate createdDate = LocalDate.now();
 
+	@Column(name = "is_verified", columnDefinition = "boolean default false")
+	private boolean isVerified = false;
+	
 	@Column(name = "published_date")
 	private LocalDate publishedDate;
 
