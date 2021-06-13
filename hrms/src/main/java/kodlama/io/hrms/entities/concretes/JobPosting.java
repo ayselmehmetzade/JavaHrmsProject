@@ -63,7 +63,12 @@ public class JobPosting {
 	@ManyToOne
 	@JoinColumn(name = "city_id")
 	private City city;
-
+	
+	@ManyToOne
+	@JoinColumn(name="employment_type_id")
+	private EmploymentType employmentType;
+	
+	
 	@ManyToOne
 	@JoinColumn(name = "employer_id")
 	private Employer employer;
