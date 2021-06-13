@@ -43,6 +43,9 @@ public class JobPosting {
 
 	@Column(name = "is_deleted")
 	private boolean isDeleted;
+	
+	@Column(name = "is_remote")
+	private boolean isRemote;
 
 	@Column(name = "created_at")
 	private LocalDate createdDate = LocalDate.now();
