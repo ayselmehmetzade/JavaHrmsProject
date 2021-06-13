@@ -2,6 +2,7 @@ package kodlama.io.hrms.api.controllers;
 
 import java.util.List;
 
+import org.hibernate.validator.constraints.CodePointLength;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import kodlama.io.hrms.entities.concretes.Employer;
 
 @RestController
 @RequestMapping("/api/employers")
+@CodePointLength
 public class EmployersController {
 
 	private EmployerService employerService;
